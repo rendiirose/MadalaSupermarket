@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="cart.js"></script>
+    <title>Disc And Headphones</title>
+    
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo"><img src="Images/11224.jpg" width="125px"></div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                        <li><a href="Accounts.html">Account</a></li>
+                        <li><a href="About.html">About</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html">
+                    <img src="Images/cart icon.png" class="shop-icon" width="35px" height="35px">
+                    <span id="cart-count">0</span>
+                </a>
+                <img src="Images/Black menu.jpg" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Disc And Headphones</h2>
+            <select onchange="la(this.value)">
+                <option value="product.html">All Products</option>
+                <option value="XboxConsoles.html">Xbox Consoles</option>
+                <option value="playstationConsoles.html">Playstation Consoles</option>
+                <option value="playstationcontrollers.html">Playstation Controller</option>
+                <option value="XboxControllers.html">Xbox Controller</option>
+                <option disabled selected>Disc And Headphones</option>
+        
+            </select>
+            </div>
+        <div class="row">
+            <!--Product 2-->
+            <div class="game2">
+                <img src="Headphones Pictures/Disc (2).jpg">
+                <h4>W2k17</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R500.00</p></div>
+                <button onclick="addToCart('W2k17', 'Headphones Pictures/Disc (2).jpg', 500.00)">Add To Cart</button>
+            </div>
+            <!--Product 3-->
+            <div class="game2">
+                <img src="Headphones Pictures/Disc (3).jpg">
+                <h4>W2k18</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R600.00</p></div>
+                <button onclick="addToCart('W2k18', 'Headphones Pictures/Disc (3).jpg', 600.00)">Add To Cart</button>
+            </div>
+            <!--Product 4-->
+            <div class="game2">
+                <img src="Headphones Pictures/Disc (4).jpg">
+                <h4>W2k17 xbox</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R550.00</p></div>
+                <button onclick="addToCart('W2k17 xbox', 'Headphones Pictures/Disc (4).jpg', 550.00)">Add To Cart</button>
+            </div>
+            <!--Product 5-->
+            <div class="game2">
+                <img src="Headphones Pictures/Disc (5).jpg">
+                <h4>Moto Gp 19</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="price"><p>R400.00</p></div>
+                <button onclick="addToCart('Moto Gp 19', 'Headphones Pictures/Disc (5).jpg', 400.00)">Add To Cart</button>
+            </div>
+            <!--Product 6-->
+            <div class="game2">
+                <img src="Headphones Pictures/Disc (6).jpg">
+                <h4>Spider-Man 2</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R650.00</p></div>
+                <button onclick="addToCart('Spider-Man 2', 'Headphones Pictures/Disc (6).jpg', 650.00)">Add To Cart</button>
+            </div>
+            
+            <!--Product 8-->
+            <div class="game2">
+                <img src="Headphones Pictures/Disc (7).jpg">
+                <h4>Fifa 23</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R950.00</p></div>
+                <button onclick="addToCart('Fifa 23', 'Headphones Pictures/Disc (7).jpg', 950.00)">Add To Cart</button>
+            </div>
+            <!--Product 9-->
+            <div class="game2">
+                <img src="Headphones Pictures/Disc (8).jpg">
+                <h4>Fifa 19</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R250.00</p></div>
+                <button onclick="addToCart('Fifa 19', 'Headphones Pictures/Disc (8).jpg', 250.00)">Add To Cart</button>
+            </div>
+            <!--Product 10-->
+            <div class="game2">
+                <img src="Headphones Pictures/Disc (9).jpg">
+                <h4>Minecraft </h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="price"><p>R150.00</p></div>
+                <button onclick="addToCart('Minecraft', 'Headphones Pictures/Disc (9).jpg', 150.00)">Add To Cart</button>
+            </div>
+            <!--Product 11-->
+            <div class="game2">
+                <img src="Headphones Pictures/headphones (1).jpg">
+                <h4>Blackshark X</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R650.00</p></div>
+                <button onclick="addToCart('Blackshark X', 'Headphones Pictures/headphones (1).jpg', 650.00)">Add To Cart</button>
+            </div>
+            <!--Product 12-->
+            <div class="game2">
+                <img src="Headphones Pictures/headphones (2).jpg">
+                <h4>Gamers Microphone</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R700.00</p></div>
+                <button onclick="addToCart('Gamers Microphone', 'Headphones Pictures/headphones (2).jpg', 700.00)">Add To Cart</button>
+            </div>
+            <!--Product 13-->
+            <div class="game2">
+                <img src="Headphones Pictures/headphones (3).jpg">
+                <h4>Bulk 2pcs</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R1550.00</p></div>
+                <button onclick="addToCart('Bulk 2pcs', 'Headphones Pictures/headphones (3).jpg', 1550.00)">Add To Cart</button>
+            </div>
+            <!--Product 14-->
+            <div class="game2">
+                <img src="Headphones Pictures/headphones (4).jpg">
+                <h4>Xbox Headphones</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="price"><p>R470.00</p></div>
+                <button onclick="addToCart('Xbox Headphones', 'Headphones Pictures/headphones (4).jpg', 470.00)">Add To Cart</button>
+            </div>
+            <!--Product 15-->
+            <div class="game2">
+                <img src="Headphones Pictures/other (1).jpg">
+                <h4>Hori Driver</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R11950.00</p></div>
+                <button onclick="addToCart('Hori Driver', 'Headphones Pictures/other (1).jpg', 11950.00)">Add To Cart</button>
+            </div>
+            <!--Product 16-->
+            <div class="game2">
+                <img src="Headphones Pictures/other (2).jpg">
+                <h4>Manual Drive</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="price"><p>R10950.00</p></div>
+                <button onclick="addToCart('Manual Drive', 'Headphones Pictures/other (2).jpg', 10950.00)">Add To Cart</button>
+            </div>
+            <!--Product 17-->
+            <div class="game2">
+                <img src="Headphones Pictures/other (3).jpg">
+                <h4>G923 Drive Manual</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <div class="price"><p>R11150.00</p></div>
+                <button onclick="addToCart('G923 Drive Manual', 'Headphones Pictures/other (3).jpg', 11150.00)">Add To Cart</button>
+            </div>
+            <!--Product 18-->
+            <div class="game2">
+                <img src="Headphones Pictures/other (4).jpg">
+                <h4>T230 Playstation</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="price"><p>R13950.00</p></div>
+                <button onclick="addToCart('T230 Playstation', 'Headphones Pictures/other (4).jpg', 13950.00)">Add To Cart</button>
+            </div>
+            
+        </div>
+        
+
+
+    </div>
+    <hr>
+    <!-- Your other HTML content here -->
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer1">
+                    <h3>Click to check our pages!!</h3>
+                    <li><ion-icon name="trophy-outline"></ion-icon> Join Competition</li>
+                    <li><ion-icon name="pricetag-outline"></ion-icon> Showing Products</li>
+                    <li><ion-icon name="lock-closed-outline"></ion-icon> Return Policy</li>
+                </div>
+                <div class="footer2">
+                    <h3>Follow Us For New Products!!</h3>
+                    <li><ion-icon name="logo-facebook"></ion-icon> Facebook </li>
+                    <li><ion-icon name="logo-whatsapp"></ion-icon> WhatsApp </li>
+                    <li><ion-icon name="logo-twitter"></ion-icon> Twitter</li>
+                    <li><ion-icon name="logo-instagram"></ion-icon> Instagram</li>
+                    <li><ion-icon name="logo-youtube"></ion-icon> YouTube</li>
+                </div>
+                <div class="footer3">
+                    <img src="Images/new (17).jpg" >
+                    <p>Explore Gaming Consoles at GamingZone</p>
+                </div>
+                <div class="footer4">
+                    <h3>Alternate Uses</h3>
+                    <p>Download App for Android & IOS system operators</p>
+                    <div class="app-logo">
+                        <img src="Images/googleplay.jpg">
+                        <img src="Images/App store.jpg" >
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright"> Copyright &#169; 2023 - GamingZone</p>
+        </div>
+    </div>
+
+    <script>
+        // Define the addToCart function
+        function addToCart(name, image, price) {
+            // Retrieve cart data from local storage
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the item is already in the cart
+            var existingItem = cartData.find(function(item) {
+                return item.name === name;
+            });
+
+            if (existingItem) {
+                // If the item is already in the cart, update the quantity
+                existingItem.quantity++;
+            } else {
+                // If the item is not in the cart, add it
+                cartData.push({
+                    name: name,
+                    image: image,
+                    price: price,
+                    quantity: 1
+                });
+            }
+
+            // Save the updated cart data back to local storage
+            localStorage.setItem('cart', JSON.stringify(cartData));
+
+            // Optionally, update the cart count display
+            updateCartCount();
+
+            // You can redirect to the cart page or perform other actions here
+        }
+
+        // Function to update the cart count display
+        function updateCartCount() {
+            var cartCountElement = document.getElementById('cart-count');
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            var totalItems = cartData.reduce(function(sum, item) {
+                return sum + item.quantity;
+            }, 0);
+            cartCountElement.textContent = totalItems;
+        }
+    </script>
+    
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle(){
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+     <!-- JS to redirect to the selected page -->
+     <script>
+        function la(src){
+            window.location=src;
+        }
+    </script>
+
+</body>
+</html>

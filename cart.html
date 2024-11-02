@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1.5px solid white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo"><img src="Images/11224.jpg" width="125px"></div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                        <li><a href="Accounts.html">Account</a></li>
+                        <li><a href="About.html">About</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html">
+                    <img src="Images/cart icon.png" class="shop-icon" width="35px" height="35px">
+                    <span id="cart-count">0</span>
+                </a>
+                <img src="Images/Black menu.jpg" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="small-container cart-page">
+        <h2>Shopping Cart</h2>
+        <div id="cart-table-container">
+            <table>
+                <tbody id="cart-table-body"></tbody>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td id="cart-total" colspan="2">Total: R0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <center><button class="button"> <a href="contacts.html"> Complete order </a></button></center>
+    <hr>
+    <!-- Your other HTML content here -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer1">
+                    <h3>Click to check our pages!!</h3>
+                    <li><ion-icon name="trophy-outline"></ion-icon> Join Competition</li>
+                    <li><ion-icon name="pricetag-outline"></ion-icon> Showing Products</li>
+                    <li><ion-icon name="lock-closed-outline"></ion-icon> Return Policy</li>
+                </div>
+                <div class ="footer2">
+                    <h3>Follow Us For New Products!!</h3>
+                    <li><ion-icon name="logo-facebook"></ion-icon> Facebook </li>
+                    <li><ion-icon name="logo-whatsapp"></ion-icon> WhatsApp </li>
+                    <li><ion-icon name="logo-twitter"></ion-icon> Twitter</li>
+                    <li><ion-icon name="logo-instagram"></ion-icon> Instagram</li>
+                    <li><ion-icon name="logo-youtube"></ion-icon> YouTube</li>
+                </div>
+                <div class="footer3">
+                    <img src="Images/new (17).jpg" >
+                    <p>Explore Gaming Consoles at GamingZone</p>
+                </div>
+                <div class="footer4">
+                    <h3>Alternate Uses</h3>
+                    <p>Download App for Android & IOS system operators</p>
+                    <div class="app-logo">
+                        <img src="Images/googleplay.jpg">
+                        <img src="Images/App store.jpg" >
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright"> Copyright &#169; 2023 - GamingZone</p>
+        </div>
+    </div>
+
+    <!-- Your cart.html content here -->
+<script>
+    // Function to update the cart display
+function updateCartDisplay() {
+    // Retrieve cart data from local storage
+    var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Get the tbody element where the cart items will be displayed
+    var cartTableBody = document.getElementById('cart-table-body');
+
+    // Clear existing table rows
+    cartTableBody.innerHTML = '';
+
+    // Iterate through the cart data and add rows to the table
+    cartData.forEach(function(item, index) {
+        var row = cartTableBody.insertRow();
+
+        // Add cells for product name, image, quantity, price, and remove button
+        var productNameCell = row.insertCell(0);
+        var imageCell = row.insertCell(1);
+        var quantityCell = row.insertCell(2);
+        var priceCell = row.insertCell(3);
+        var removeCell = row.insertCell(4);
+
+        // Set the content for each cell
+        productNameCell.textContent = item.name;
+
+        // Check if the image URL is defined
+        if (item.image) {
+            // Set the image cell content with proper error checking
+            try {
+                imageCell.innerHTML = `<img src="${item.image}" width="50" height="50">`;
+            } catch (error) {
+                console.error(`Error loading image for item at index ${index}: ${error.message}`);
+                imageCell.textContent = 'Image Error';
+            }
+        } else {
+            // Log an error if the image URL is undefined
+            console.error(`Image URL is undefined for item at index ${index}`);
+            imageCell.textContent = 'Image Not Found';
+        }
+
+        quantityCell.innerHTML = `
+            <button onclick="changeQuantity(this, -1)">-</button>
+            ${item.quantity}
+            <button onclick="changeQuantity(this, 1)">+</button>`;
+        priceCell.textContent = `R${(item.price * item.quantity).toFixed(2)}`;
+        removeCell.innerHTML = '<button onclick="removeFromCart(this)">Remove</button>';
+    });
+
+    // Update the total in the footer
+    updateCartTotal();
+}
+
+    // Function to update the total in the footer
+    function updateCartTotal() {
+        var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        var cartTotalElement = document.getElementById('cart-total');
+        var total = 0;
+
+        cartData.forEach(function(item) {
+            total += item.price * item.quantity;
+        });
+
+        cartTotalElement.textContent = `Total: R${total.toFixed(2)}`;
+    }
+
+    // Function to remove an item from the cart
+    function removeFromCart(button) {
+        var row = button.parentNode.parentNode;
+        var productName = row.cells[0].textContent;
+
+        // Retrieve cart data from local storage
+        var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Remove the item from the cart data
+        cartData = cartData.filter(function(item) {
+            return item.name !== productName;
+        });
+
+        // Save the updated cart data back to local storage
+        localStorage.setItem('cart', JSON.stringify(cartData));
+
+        // Update the cart display
+        updateCartDisplay();
+    }
+
+    // Function to change the quantity of an item in the cart
+    function changeQuantity(button, change) {
+        var row = button.parentNode.parentNode;
+        var productName = row.cells[0].textContent;
+
+        // Retrieve cart data from local storage
+        var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Find the item in the cart data
+        var item = cartData.find(function(item) {
+            return item.name === productName;
+        });
+
+        // Update the quantity
+        if (item) {
+            item.quantity += change;
+            if (item.quantity < 1) {
+                item.quantity = 1; // Ensure quantity doesn't go below 1
+            }
+        }
+
+        // Save the updated cart data back to local storage
+        localStorage.setItem('cart', JSON.stringify(cartData));
+
+        // Update the cart display
+        updateCartDisplay();
+    }
+
+    // Update the cart display when the page loads
+    window.onload = updateCartDisplay;
+</script>
+<!-- Your other scripts here -->
+
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle(){
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    
+</body>
+</html>

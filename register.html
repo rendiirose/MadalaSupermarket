@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="LoginStyle.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo"><a href="index.html"><img src="Images/11224.jpg" width="125px"></a></div>
+    </div>
+    
+    <div class="container">
+       <div class="box form-box">
+        <header>Register</header>
+        <form action="connect.php" method="post" onsubmit="return validateRegistration()">
+        
+            <div class="field input">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+        
+            <div class="field input">
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="Email" required>
+            </div>
+
+            <div class="field input">
+                <label for="Number">Cellphone Number</label>
+                <input type="text" name="cellphone" id="number" required>
+            </div>
+
+            <div class="field input">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <div class="field">
+                <input type="submit" class="button" name="submit" value="Register">
+            </div>
+
+            <div class="links">
+                By clicking the Register button, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> 
+                <br> <br>
+                <center>Already have an Account? <a href="loginPage.html"> Login Now</a></center>
+            </div>
+        </form>
+       </div>
+    </div>
+
+    <script>
+        function validateRegistration() {
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('Email').value;
+            var number = document.getElementById('number').value;
+            var password = document.getElementById('password').value;
+
+            // Example: Check if the username is at least 5 characters long
+            if (username.length < 5) {
+                alert('Username must be at least 5 characters long.');
+                return false;
+            }
+
+            // Example: Check if the email is valid
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailRegex)) {
+                alert('Invalid email address.');
+                return false;
+            }
+
+            // You can add more validation rules based on your requirements
+
+            return true;
+        }
+    </script>
+</body>
+</html>
